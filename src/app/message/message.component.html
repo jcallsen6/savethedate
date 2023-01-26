@@ -1,0 +1,7 @@
+<div class="container">
+    <div class="angular-img-wrapper">
+      <ng-container>
+        <app-envelope (click)="removeCard()" *ngIf="showCard" [@bounceInDownOnEnter] [@bounceOutDownOnLeave]></app-envelope>
+      </ng-container>
+    </div>
+  </div>
