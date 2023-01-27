@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="angular-img-wrapper">
+    <div class="angular-img-wrapper" (wheel)="removeCard()">
       <ng-container>
         <app-envelope (click)="removeCard()" *ngIf="showCard" [@bounceInDownOnEnter] [@bounceOutDownOnLeave]></app-envelope>
       </ng-container>
