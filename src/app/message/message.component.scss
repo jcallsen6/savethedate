@@ -1,10 +1,141 @@
-
-.angular-img-wrapper {
-    overflow-y: hidden;
-    -ms-overflow-style: none;  /* Internet Explorer 10+ */
-    scrollbar-width: none;  /* Firefox */
+.card {
+  content: url(../../assets/maincard_plain_small.jpg);
+    scale: 100%;
+    z-index: 1;
+    -webkit-transition: all 2s ease;  
+    -moz-transition: all 2s ease;  
+    -o-transition: all 2s ease;  
+    -ms-transition: all 2s ease;  
+    transition: all 2s ease;
+    width: 100vw;
+  }
+  
+.envelope_front {
+  content: url(../../assets/envelope_front-01.png);
+  scale: 100%;
+  width: 100vw;
+  z-index: 2;
 }
 
-.angular-img-wrapper::-webkit-scrollbar { 
-    display: none;  /* Safari and Chrome */
+.envelope_back {
+  content: url(../../assets/envelope_closed-01.png);
+  width: 100vw;
+  z-index: 0;
+}
+
+.envelope_top{ content:url(../../assets/envelope_top_new.png);
+  z-index: 3;
+  width: 82vw;
+  transform-origin: bottom;
+  transform: rotateX(180deg);
+}
+
+.center {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.box {
+  background-color: #218D9B;
+  height: 6.25em;
+  width: 6.25em;
+}
+
+.transform-active {
+  background-color: #45CEE0;
+  height: 12.5em;
+  width: 12.5em;
+}
+  
+.envelope{
+  -webkit-transition: all 2s ease;  
+  -moz-transition: all 2s ease;  
+  -o-transition: all 2s ease;  
+  -ms-transition: all 2s ease;  
+  transition: all 2s ease;
+  visibility: visible;
+  opacity: 1;
+}
+
+.action:hover{
+  cursor:pointer;
+}
+
+@-moz-document url-prefix() {
+  .card {
+    margin-top: 5em !important;
+    width: 50vw !important;
+  }
+}
+
+@media only screen and (min-width: 768px) {    
+  .card {
+    content: url(../../assets/maincard_plain_small.jpg);
+      z-index: 1;
+      -webkit-transition: all 2s ease;  
+      -moz-transition: all 2s ease;  
+      -o-transition: all 2s ease;  
+      -ms-transition: all 2s ease;  
+      transition: all 2s ease;
+      margin-top: 15em;
+      width: 45vw;
+    }
+
+  .envelope_front {
+    content: url(../../assets/envelope_front-01.png);
+    width: 60vw;
+    z-index: 2;
+  }
+  
+  .envelope_back {
+    content: url(../../assets/envelope_closed-01.png);
+    width: 60vw;
+    z-index: 0;
+  }
+  
+  .envelope_top{ content:url(../../assets/envelope_top_new.png);
+    z-index: 3;
+    width: 50vw;
+    transform-origin: bottom;
+    transform: rotateX(180deg);
+  }
+  
+  .center {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+  
+  .box {
+    background-color: #218D9B;
+    height: 6.25em;
+    width: 6.25em;
+  }
+  
+  .transform-active {
+    background-color: #45CEE0;
+    height: 12.5em;
+    width: 12.5em;
+  }
+    
+  .envelope{
+    -webkit-transition: all 2s ease;  
+    -moz-transition: all 2s ease;  
+    -o-transition: all 2s ease;  
+    -ms-transition: all 2s ease;  
+    transition: all 2s ease;
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .action:hover{
+    cursor:pointer;
+  }
 }

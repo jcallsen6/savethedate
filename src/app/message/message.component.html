@@ -1,7 +1,10 @@
-<div class="container">
-    <div class="angular-img-wrapper" (wheel)="removeCard()">
-      <ng-container>
-        <app-envelope (click)="removeCard()" *ngIf="showCard" [@bounceInDownOnEnter] [@bounceOutDownOnLeave]></app-envelope>
-      </ng-container>
+<div class="action">
+    <div [@envelope]="moveLetter ? 'open' : 'closed'" class='envelope envelope_front center'>
     </div>
+    <div [@card]="moveLetter ? 'open' : 'closed'" class='card center' id='card'>
+    </div>
+    <div [@envelope]="moveLetter ? 'open' : 'closed'" class='envelope envelope_back center'>
+    </div>
+    <div [@envelopeTop]="openLetter ? 'open' : 'closed'" [@envelope]="moveLetter ? 'open' : 'closed'" (wheel)="openCard()" (click)="openCard()" class='envelope envelope_top center flip-horizontally'>
+  </div>
   </div>
