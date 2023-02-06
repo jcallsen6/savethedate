@@ -67,8 +67,15 @@
 
 @-moz-document url-prefix() {
   .card {
-    margin-top: 5em !important;
-    width: 50vw !important;
+    margin-top: 25vh !important;
+  }
+
+  .envelope{
+    max-width: 900px !important;
+  }
+
+  .envelope_top {
+    width: 750px !important;
   }
 }
 
@@ -81,27 +88,29 @@
       -o-transition: all 2s ease;  
       -ms-transition: all 2s ease;  
       transition: all 2s ease;
-      margin-top: 15em;
-      width: 45vw;
+      margin-top: 15vh;
+      width: 35%;
+      max-width: 900px;
     }
 
   .envelope_front {
     content: url(../../assets/envelope_front-01.png);
-    width: 60vw;
+    width: 60%;
     z-index: 2;
   }
   
   .envelope_back {
     content: url(../../assets/envelope_closed-01.png);
-    width: 60vw;
+    width: 60%;
     z-index: 0;
   }
   
   .envelope_top{ content:url(../../assets/envelope_top_new.png);
     z-index: 3;
-    width: 50vw;
+    width: 50%;
     transform-origin: bottom;
     transform: rotateX(180deg);
+    max-width: 890px !important;
   }
   
   .center {
@@ -133,6 +142,7 @@
     transition: all 2s ease;
     visibility: visible;
     opacity: 1;
+    max-width: 1080px;
   }
   
   .action:hover{

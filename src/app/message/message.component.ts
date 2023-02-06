@@ -52,9 +52,7 @@ export class MessageComponent {
   openLetter: boolean = false;
   moveLetter: boolean = false;
   // TODO confetti
-  // TODO fix top card not moving with body
   // TODO fix firefox
-  // TODO fix mobile
   openCard() {
     this.openLetter = true;
     timer(1500).subscribe(_ => this.moveLetter = true);
