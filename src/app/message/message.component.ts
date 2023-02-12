@@ -52,8 +52,7 @@ export class MessageComponent {
 
   openLetter: boolean = false;
   moveLetter: boolean = false;
-  // TODO confetti
-  // TODO remove redundant css
+
   openCard() {
     this.openLetter = true;
     
@@ -74,26 +73,28 @@ export class MessageComponent {
       resize: true,
     })({
       shapes: ['square'],
-      particleCount: 50,
+      particleCount: 100,
       spread: 90,
       origin: {
         x: 0,
         y: 0.3
       },
       angle: 0,
+      startVelocity: 15,
   });
     timer(1500).subscribe(_ => this.moveLetter = true);
     confetti.create(myCanvas2, {
       resize: true,
     })({
       shapes: ['square'],
-      particleCount: 50,
+      particleCount: 100,
       spread: 90,
       origin: {
         x: 1,
         y: 0.3
       },
       angle: 180,
+      startVelocity: 15,
   });
   }
 }
