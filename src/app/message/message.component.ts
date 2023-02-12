@@ -58,17 +58,42 @@ export class MessageComponent {
     this.openLetter = true;
     
     let myCanvas = document.createElement('canvas');
-    myCanvas.height = screen.height * 0.5;
-    myCanvas.width = screen.width * 0.75;
+    myCanvas.height = window.innerHeight;
+    myCanvas.width = document.body.clientWidth * 0.5;
+    let myCanvas2 = document.createElement('canvas');
+    myCanvas2.height = window.innerHeight;
+
+    //If this second canvas is too large, it will be placed under the first canvas. Unsure why the 17px offset is needed, perhaps the scrollbar or padding?
+    myCanvas2.width = document.body.clientWidth * 0.5 - 17;
+
     document.body.appendChild(myCanvas);
+    document.body.appendChild(myCanvas2);
 
     timer(1500).subscribe(_ => this.moveLetter = true);
     confetti.create(myCanvas, {
       resize: true,
     })({
       shapes: ['square'],
-      particleCount: 100,
+      particleCount: 50,
       spread: 90,
+      origin: {
+        x: 0,
+        y: 0.3
+      },
+      angle: 0,
+  });
+    timer(1500).subscribe(_ => this.moveLetter = true);
+    confetti.create(myCanvas2, {
+      resize: true,
+    })({
+      shapes: ['square'],
+      particleCount: 50,
+      spread: 90,
+      origin: {
+        x: 1,
+        y: 0.3
+      },
+      angle: 180,
   });
   }
 }
