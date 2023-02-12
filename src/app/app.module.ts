@@ -5,8 +5,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
-import { EnvelopeComponent } from './envelope/envelope.component';
-import { CardComponent } from './card/card.component';
 import { MessageComponent } from './message/message.component';
 
 @NgModule({
@@ -20,8 +18,6 @@ import { MessageComponent } from './message/message.component';
   ],
   declarations: [
     AppComponent,
-    EnvelopeComponent,
-    CardComponent,
     MessageComponent
   ],
   bootstrap: [
