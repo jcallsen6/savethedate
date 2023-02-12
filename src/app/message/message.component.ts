@@ -54,47 +54,52 @@ export class MessageComponent {
   moveLetter: boolean = false;
 
   openCard() {
-    this.openLetter = true;
+    // we only want this to run once
+    if(!this.openLetter){
+      this.openLetter = true;
     
-    let myCanvas = document.createElement('canvas');
-    myCanvas.height = window.innerHeight;
-    myCanvas.width = document.body.clientWidth * 0.5;
-    let myCanvas2 = document.createElement('canvas');
-    myCanvas2.height = window.innerHeight;
-
-    //If this second canvas is too large, it will be placed under the first canvas. Unsure why the 17px offset is needed, perhaps the scrollbar or padding?
-    myCanvas2.width = document.body.clientWidth * 0.5 - 17;
-
-    document.body.appendChild(myCanvas);
-    document.body.appendChild(myCanvas2);
-
-    timer(1500).subscribe(_ => this.moveLetter = true);
-    confetti.create(myCanvas, {
-      resize: true,
-    })({
-      shapes: ['square'],
-      particleCount: 100,
-      spread: 90,
-      origin: {
-        x: 0,
-        y: 0.3
-      },
-      angle: 0,
-      startVelocity: 15,
-  });
-    timer(1500).subscribe(_ => this.moveLetter = true);
-    confetti.create(myCanvas2, {
-      resize: true,
-    })({
-      shapes: ['square'],
-      particleCount: 100,
-      spread: 90,
-      origin: {
-        x: 1,
-        y: 0.3
-      },
-      angle: 180,
-      startVelocity: 15,
-  });
-  }
+      let myCanvas = document.createElement('canvas');
+      myCanvas.setAttribute("overflow", "hidden");
+      myCanvas.height = window.innerHeight * 0.9;
+      myCanvas.width = document.body.clientWidth * 0.5;
+      let myCanvas2 = document.createElement('canvas');
+      myCanvas2.height = window.innerHeight * 0.9;
+      myCanvas.setAttribute("overflow", "hidden");
+  
+      //If this second canvas is too large, it will be placed under the first canvas. Unsure why the 17px offset is needed, perhaps the scrollbar or padding?
+      myCanvas2.width = document.body.clientWidth * 0.5 - 17;
+  
+      document.body.appendChild(myCanvas);
+      document.body.appendChild(myCanvas2);
+  
+      timer(1500).subscribe(_ => this.moveLetter = true);
+      confetti.create(myCanvas, {
+        resize: true,
+      })({
+        shapes: ['square'],
+        particleCount: 100,
+        spread: 90,
+        origin: {
+          x: 0,
+          y: 0.3
+        },
+        angle: 0,
+        startVelocity: 15,
+    });
+      timer(1500).subscribe(_ => this.moveLetter = true);
+      confetti.create(myCanvas2, {
+        resize: true,
+      })({
+        shapes: ['square'],
+        particleCount: 100,
+        spread: 90,
+        origin: {
+          x: 1,
+          y: 0.3
+        },
+        angle: 180,
+        startVelocity: 15,
+    });
+    }
+    }    
 }

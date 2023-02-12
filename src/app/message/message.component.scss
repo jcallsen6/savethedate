@@ -1,3 +1,5 @@
+html, body {margin: 0; height: 100%; overflow: hidden}
+
 .card {
   content: url(../../assets/card.png);
     scale: 100%;
@@ -59,6 +61,7 @@
   transition: all 2s ease;
   visibility: visible;
   opacity: 1;
+  overflow-y: hidden;
 }
 
 .action:hover{
@@ -76,6 +79,8 @@
 }
 
 @media only screen and (min-width: 768px) {    
+  html, body {margin: 0; height: 100%; overflow: hidden}
+  
   .card {
     content: url(../../assets/card.png);
       z-index: 1;
@@ -139,6 +144,7 @@
     visibility: visible;
     opacity: 1;
     max-width: 1080px;
+    overflow-y: hidden;
   }
   
   .action:hover{

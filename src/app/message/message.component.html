@@ -1,4 +1,4 @@
-<div class="action">
+<div class="action" style="overflow: hidden">
     <div [@envelope]="moveLetter ? 'open' : 'closed'" class='envelope envelope_front center'>
     </div>
     <div [@card]="moveLetter ? 'open' : 'closed'" class='card center' id='card'>
@@ -7,4 +7,4 @@
     </div>
     <div [@envelopeTop]="openLetter ? 'open' : 'closed'" [@envelope]="moveLetter ? 'open' : 'closed'" (wheel)="openCard()" (click)="openCard()" class='envelope envelope_top center flip-horizontally'>
   </div>
-  </div>
+</div>
