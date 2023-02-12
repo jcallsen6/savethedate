@@ -19,6 +19,7 @@
     "@angular/platform-browser-dynamic": "^15.0.0",
     "@angular/router": "^15.0.0",
     "angular-animations": "^0.11.0",
+    "canvas-confetti": "^1.6.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
@@ -27,6 +28,7 @@
     "@angular-devkit/build-angular": "^15.0.5",
     "@angular/cli": "~15.0.5",
     "@angular/compiler-cli": "^15.0.0",
+    "@types/canvas-confetti": "^1.6.0",
     "@types/jasmine": "~4.3.0",
     "jasmine-core": "~4.5.0",
     "karma": "~6.4.0",

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { trigger, transition, animate, state, style } from '@angular/animations';
 import { timer } from 'rxjs';
+import * as confetti from 'canvas-confetti';
 
 @Component({
   selector: 'app-message',
@@ -52,9 +53,22 @@ export class MessageComponent {
   openLetter: boolean = false;
   moveLetter: boolean = false;
   // TODO confetti
-  // TODO fix firefox
+  // TODO remove redundant css
   openCard() {
     this.openLetter = true;
+    
+    let myCanvas = document.createElement('canvas');
+    myCanvas.height = screen.height * 0.5;
+    myCanvas.width = screen.width * 0.75;
+    document.body.appendChild(myCanvas);
+
     timer(1500).subscribe(_ => this.moveLetter = true);
+    confetti.create(myCanvas, {
+      resize: true,
+    })({
+      shapes: ['square'],
+      particleCount: 100,
+      spread: 90,
+  });
   }
 }
