@@ -16,7 +16,6 @@ import * as confetti from 'canvas-confetti';
       })),
       state('open', style({
         opacity: 0,
-        transform: 'translateY(15em)'
       })),
       transition('open => closed', [
         animate('1.5s')

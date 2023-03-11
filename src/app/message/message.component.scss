@@ -9,7 +9,8 @@ html, body {margin: 0; height: 100%; overflow: hidden}
     -o-transition: all 2s ease;  
     -ms-transition: all 2s ease;  
     transition: all 2s ease;
-    width: 100vw;
+    width: 80vw;
+    margin-top: 2em;
   }
   
 .envelope_front {
@@ -68,13 +69,13 @@ html, body {margin: 0; height: 100%; overflow: hidden}
   cursor:pointer;
 }
 
-@-moz-document url-prefix() {
+@supports (-moz-appearance:none) {
   .envelope{
-    max-width: 900px !important;
+    max-width: 700px !important;
   }
 
   .envelope_top {
-    width: 750px !important;
+    width: 575px !important;
   }
 }
 
@@ -91,19 +92,21 @@ html, body {margin: 0; height: 100%; overflow: hidden}
       transition: all 2s ease;
       margin-top: 15vh;
       width: 35%;
-      max-width: 900px;
+      max-width: 400px;
     }
 
   .envelope_front {
     content: url(../../assets/envelope_front-01.png);
     width: 60%;
     z-index: 2;
+    max-width: 677px;
   }
   
   .envelope_back {
     content: url(../../assets/envelope_closed-01.png);
     width: 60%;
-    z-index: 0;
+    z-index: 0;    
+    max-width: 677px;
   }
   
   .envelope_top{ content:url(../../assets/envelope_top_new.png);
@@ -111,7 +114,7 @@ html, body {margin: 0; height: 100%; overflow: hidden}
     width: 50%;
     transform-origin: bottom;
     transform: rotateX(180deg);
-    max-width: 890px !important;
+    max-width: 560px;
   }
   
   .center {
@@ -143,7 +146,6 @@ html, body {margin: 0; height: 100%; overflow: hidden}
     transition: all 2s ease;
     visibility: visible;
     opacity: 1;
-    max-width: 1080px;
     overflow-y: hidden;
   }
   
