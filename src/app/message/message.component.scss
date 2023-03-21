@@ -2,6 +2,10 @@
   height: 100%
 }
 
+html{
+  height: 100%;
+}
+
 .center{
   display:flex;
   justify-content:center;
@@ -25,11 +29,12 @@
 }
 
 .survey{
-  height: 500px;
+  height: 95vh;
+  min-height: 95vh;
 }
 
 .nextbutton{
-  margin-top: 60vh;
+  margin-top: 70vh;
 }
 
 .mat-mdc-raised-button:not(:disabled){
@@ -41,15 +46,6 @@
 .survey{
   height: 75vh;
   width: 100vw;
-}
-
-@media only screen and (min-width: 360px) and (max-width: 768px) {
-	.image{
-  height:250px;
-  position: absolute;
-  top: 120px;
-  margin-top: 10vh;
-  }
 }
 
 .front{
@@ -72,4 +68,17 @@
 
 .action:hover{
   cursor:pointer;
+}
+
+@media only screen and (min-width: 360px) and (max-width: 768px) {
+	.image{
+  height:250px;
+  position: absolute;
+  top: 120px;
+  margin-top: 10vh;
+  }
+
+  .nextbutton{
+    margin-top: 60vh;
+  }
 }
