@@ -1,10 +1,16 @@
-<div class="action" style="overflow: hidden">
-    <div [@envelope]="moveLetter ? 'open' : 'closed'" class='envelope envelope_front center'>
+<div class='container'>
+  <div *ngIf=!showSurvey class='center' (click)="openCard()" (wheel)="openCard()">
+    <img [@card]="moveLetter ? 'open' : 'closed'" class="image card center" src="../../assets/card.png">
+    <div [@envelope]="moveLetter ? 'open' : 'closed'" class='envelope action center'>      
+      <img class="image front" src="../../assets/envelope_front-01.png">
+      <img class="image back" src="../../assets/envelope_back-01.png">
+      <img id=top [@envelopeTop]="openLetter ? 'open' : 'closed'" class="image top" src="../../assets/envelope_top-01.png">
     </div>
-    <div [@card]="moveLetter ? 'open' : 'closed'" class='card center' id='card'>
-    </div>
-    <div [@envelope]="moveLetter ? 'open' : 'closed'" class='envelope envelope_back center'>
-    </div>
-    <div [@envelopeTop]="openLetter ? 'open' : 'closed'" [@envelope]="moveLetter ? 'open' : 'closed'" (wheel)="openCard()" (click)="openCard()" class='envelope envelope_top center flip-horizontally'>
+  </div>
+  <div *ngIf="showButton && !showSurvey" class="center nextbutton">
+    <button (click)="hotelBlock()" mat-raised-button>Hotel Block?</button>
+  </div>
+  <div *ngIf=showSurvey>
+    <iframe class="center survey" src="https://docs.google.com/forms/d/e/1FAIpQLScbqYlAo0UVWURoIiOV3HRJo7lhE1-75VNJ8xvXwAywiiCqDQ/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
   </div>
 </div>

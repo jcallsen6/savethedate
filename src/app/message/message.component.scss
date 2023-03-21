@@ -1,155 +1,75 @@
-html, body {margin: 0; height: 100%; overflow: hidden}
-
-.card {
-  content: url(../../assets/card.png);
-    scale: 100%;
-    z-index: 1;
-    -webkit-transition: all 2s ease;  
-    -moz-transition: all 2s ease;  
-    -o-transition: all 2s ease;  
-    -ms-transition: all 2s ease;  
-    transition: all 2s ease;
-    width: 80vw;
-    margin-top: 2em;
-  }
-  
-.envelope_front {
-  content: url(../../assets/envelope_front-01.png);
-  scale: 100%;
-  width: 100vw;
-  z-index: 2;
+:host {
+  height: 100%
 }
 
-.envelope_back {
-  content: url(../../assets/envelope_closed-01.png);
-  width: 100vw;
-  z-index: 0;
+.center{
+  display:flex;
+  justify-content:center;
 }
 
-.envelope_top{ content:url(../../assets/envelope_top_new.png);
-  z-index: 3;
-  width: 82vw;
-  transform-origin: bottom;
-  transform: rotateX(180deg);
+/* Hide scrollbar for Chrome, Safari and Opera */
+.container::-webkit-scrollbar {
+  display: none;
 }
 
-.center {
+/* Hide scrollbar for IE, Edge and Firefox */
+.container {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.image{
+  height:350px;
   position: absolute;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
-  text-align: center;
+  top: 300px;
 }
 
-.box {
-  background-color: #218D9B;
-  height: 6.25em;
-  width: 6.25em;
+.survey{
+  height: 500px;
 }
 
-.transform-active {
-  background-color: #45CEE0;
-  height: 12.5em;
-  width: 12.5em;
+.nextbutton{
+  margin-top: 60vh;
 }
-  
-.envelope{
-  -webkit-transition: all 2s ease;  
-  -moz-transition: all 2s ease;  
-  -o-transition: all 2s ease;  
-  -ms-transition: all 2s ease;  
-  transition: all 2s ease;
-  visibility: visible;
-  opacity: 1;
-  overflow-y: hidden;
+
+.mat-mdc-raised-button:not(:disabled){
+  color: #fff;
+  background-color: maroon;
+  font-family: sans-serif;
+}
+
+.survey{
+  height: 75vh;
+  width: 100vw;
+}
+
+@media only screen and (min-width: 360px) and (max-width: 768px) {
+	.image{
+  height:250px;
+  position: absolute;
+  top: 120px;
+  margin-top: 10vh;
+  }
+}
+
+.front{
+  z-index:3;
+}
+
+.back{
+  z-index:1;
+}
+
+.top{
+  z-index:3;
+  transform-origin: center top;
+}
+
+.card{
+  scale:100%;
+  z-index:3;
 }
 
 .action:hover{
   cursor:pointer;
-}
-
-@supports (-moz-appearance:none) {
-  .envelope{
-    max-width: 700px !important;
-  }
-
-  .envelope_top {
-    width: 575px !important;
-  }
-}
-
-@media only screen and (min-width: 768px) {    
-  html, body {margin: 0; height: 100%; overflow: hidden}
-  
-  .card {
-    content: url(../../assets/card.png);
-      z-index: 1;
-      -webkit-transition: all 2s ease;  
-      -moz-transition: all 2s ease;  
-      -o-transition: all 2s ease;  
-      -ms-transition: all 2s ease;  
-      transition: all 2s ease;
-      margin-top: 15vh;
-      width: 35%;
-      max-width: 400px;
-    }
-
-  .envelope_front {
-    content: url(../../assets/envelope_front-01.png);
-    width: 60%;
-    z-index: 2;
-    max-width: 677px;
-  }
-  
-  .envelope_back {
-    content: url(../../assets/envelope_closed-01.png);
-    width: 60%;
-    z-index: 0;    
-    max-width: 677px;
-  }
-  
-  .envelope_top{ content:url(../../assets/envelope_top_new.png);
-    z-index: 3;
-    width: 50%;
-    transform-origin: bottom;
-    transform: rotateX(180deg);
-    max-width: 560px;
-  }
-  
-  .center {
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    text-align: center;
-  }
-  
-  .box {
-    background-color: #218D9B;
-    height: 6.25em;
-    width: 6.25em;
-  }
-  
-  .transform-active {
-    background-color: #45CEE0;
-    height: 12.5em;
-    width: 12.5em;
-  }
-    
-  .envelope{
-    -webkit-transition: all 2s ease;  
-    -moz-transition: all 2s ease;  
-    -o-transition: all 2s ease;  
-    -ms-transition: all 2s ease;  
-    transition: all 2s ease;
-    visibility: visible;
-    opacity: 1;
-    overflow-y: hidden;
-  }
-  
-  .action:hover{
-    cursor:pointer;
-  }
 }

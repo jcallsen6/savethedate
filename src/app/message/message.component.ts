@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { trigger, transition, animate, state, style } from '@angular/animations';
 import { timer } from 'rxjs';
+import { MatButtonModule } from '@angular/material/button';
 import * as confetti from 'canvas-confetti';
 
 @Component({
@@ -12,47 +13,60 @@ import * as confetti from 'canvas-confetti';
       state('closed', style({
         opacity: 1,
         visibility: 'visible',
-        transition: 'all 2s ease'
       })),
       state('open', style({
         opacity: 0,
+        transform: 'translateY(500px)'
       })),
-      transition('open => closed', [
-        animate('1.5s')
+      transition('closed => open', [
+        animate('3s')
       ])
     ]),
     trigger('envelopeTop', [
       state('closed', style({
-        opacity: 1,
-        transition: 'rotateX(180deg)'
       })),
       state('open', style({
-        transform: 'rotateX(0deg)'
+        transform: 'rotateX(180deg)',
+        transitionTimingFunction: 'linear',
+        transformStyle: 'flat',
       })),
-      transition('open => closed', [
-        animate('1.5s')
+      transition('closed => open', [
+        animate('1s')
       ])
     ]),
     trigger('card', [
       state('closed', style({
-        scale: '40%',
+        scale: '95%',
       })),
       state('open', style({
-        scale: '70%',
-        marginTop: "0",
+        scale: '150%',
+        transform: 'translateY(-50px)'
       })),
-      transition('open => closed', [
-        animate('1.5s')
+      transition('closed => open', [
+        animate('1s')
       ])
-    ])
+    ]),
+    trigger('survey', [
+      state('closed', style({
+        opacity: 0,
+      })),
+      state('open', style({
+        opacity: 1,
+      })),
+      transition('closed => open', [
+        animate('1s')
+      ])
+    ]),
   ]
 })
 export class MessageComponent {
 
   openLetter: boolean = false;
   moveLetter: boolean = false;
+  showButton: boolean = false;
+  showSurvey: boolean = false;
 
-  openCard() {
+  public openCard(): void {
     // we only want this to run once
     if(!this.openLetter){
       this.openLetter = true;
@@ -84,7 +98,7 @@ export class MessageComponent {
         },
         angle: 0,
         startVelocity: 15,
-    });
+      });
       timer(1500).subscribe(_ => this.moveLetter = true);
       confetti.create(myCanvas2, {
         resize: true,
@@ -98,7 +112,17 @@ export class MessageComponent {
         },
         angle: 180,
         startVelocity: 15,
-    });
+      });
+
+      timer(5000).subscribe(_ => {
+        this.showButton = true;
+        document.body.removeChild(myCanvas);
+        document.body.removeChild(myCanvas2);
+      });
     }
-    }    
+  }
+    
+  public hotelBlock(): void{
+    this.showSurvey = true;
+  }
 }
