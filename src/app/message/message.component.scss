@@ -23,9 +23,9 @@ html{
 }
 
 .image{
-  height:500px;
+  height:400px;
   position: absolute;
-  top: 400px;
+  top: 300px;
 }
 
 .survey{
@@ -85,5 +85,13 @@ html{
   .card{
     margin-top: 15vh;
     scale: 50%;
+  }
+}
+
+@-moz-document url-prefix() {
+  .image{
+    height:500px;
+    position: absolute;
+    top: 400px;
   }
 }

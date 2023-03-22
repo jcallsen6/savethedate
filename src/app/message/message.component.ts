@@ -38,7 +38,7 @@ import * as confetti from 'canvas-confetti';
       state('closed', style({
       })),
       state('open', style({
-        scale: '200%',
+        scale: '175%',
         transform: 'translateY(-50px)'
       })),
       transition('closed => open', [
