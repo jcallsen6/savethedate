@@ -23,9 +23,9 @@ html{
 }
 
 .image{
-  height:350px;
+  height:500px;
   position: absolute;
-  top: 300px;
+  top: 400px;
 }
 
 .survey{
@@ -34,7 +34,7 @@ html{
 }
 
 .nextbutton{
-  margin-top: 70vh;
+  margin-top: 80vh;
 }
 
 .mat-mdc-raised-button:not(:disabled){
@@ -62,7 +62,7 @@ html{
 }
 
 .card{
-  scale:100%;
+  scale:95%;
   z-index:3;
 }
 
@@ -79,6 +79,11 @@ html{
   }
 
   .nextbutton{
-    margin-top: 60vh;
+    margin-top: 70vh;
+  }
+
+  .card{
+    margin-top: 15vh;
+    scale: 50%;
   }
 }

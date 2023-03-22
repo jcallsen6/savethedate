@@ -36,10 +36,9 @@ import * as confetti from 'canvas-confetti';
     ]),
     trigger('card', [
       state('closed', style({
-        scale: '95%',
       })),
       state('open', style({
-        scale: '150%',
+        scale: '200%',
         transform: 'translateY(-50px)'
       })),
       transition('closed => open', [
