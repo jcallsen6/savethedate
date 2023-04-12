@@ -1,10 +1,10 @@
 <div class='container'>
   <div *ngIf=!showSurvey class='center' (click)="openCard()" (wheel)="openCard()">
-    <img [@card]="moveLetter ? 'open' : 'closed'" class="image card center" src="../../assets/card.png">
+    <img [@card]="moveLetter ? 'open' : 'closed'" class="image card center" src="assets/card.png">
     <div [@envelope]="moveLetter ? 'open' : 'closed'" class='envelope action center'>      
-      <img class="image front" src="../../assets/envelope_front-01.png">
-      <img class="image back" src="../../assets/envelope_back-01.png">
-      <img id=top [@envelopeTop]="openLetter ? 'open' : 'closed'" class="image top" src="../../assets/envelope_top-01.png">
+      <img class="image front" src="assets/envelope_front-01.png">
+      <img class="image back" src="assets/envelope_back-01.png">
+      <img id=top [@envelopeTop]="openLetter ? 'open' : 'closed'" class="image top" src="assets/envelope_top-01.png">
     </div>
   </div>
   <div *ngIf="showButton && !showSurvey" class="center nextbutton">
