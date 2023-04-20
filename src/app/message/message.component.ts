@@ -4,59 +4,114 @@ import { timer } from 'rxjs';
 import { MatButtonModule } from '@angular/material/button';
 import * as confetti from 'canvas-confetti';
 
+
+
+const desktopAnimations = [
+  trigger('envelope', [
+    state('closed', style({
+      opacity: 1,
+      visibility: 'visible',
+    })),
+    state('open', style({
+      opacity: 0,
+      transform: 'translateY(500px)'
+    })),
+    transition('closed => open', [
+      animate('3s')
+    ])
+  ]),
+  trigger('envelopeTop', [
+    state('closed', style({
+    })),
+    state('open', style({
+      transform: 'rotateX(180deg)',
+      transitionTimingFunction: 'linear',
+      transformStyle: 'flat',
+    })),
+    transition('closed => open', [
+      animate('1s')
+    ])
+  ]),
+  trigger('card', [
+    state('closed', style({
+    })),
+    state('open', style({
+      scale: '100%',
+      transform: 'translateY(-50px)'
+    })),
+    transition('closed => open', [
+      animate('1s')
+    ])
+  ]),
+  trigger('survey', [
+    state('closed', style({
+      opacity: 0,
+    })),
+    state('open', style({
+      opacity: 1,
+    })),
+    transition('closed => open', [
+      animate('1s')
+    ])
+  ]),
+];
+
+const mobileAnimations = [
+  trigger('envelope', [
+    state('closed', style({
+      opacity: 1,
+      visibility: 'visible',
+    })),
+    state('open', style({
+      opacity: 0,
+      transform: 'translateY(500px)'
+    })),
+    transition('closed => open', [
+      animate('3s')
+    ])
+  ]),
+  trigger('envelopeTop', [
+    state('closed', style({
+    })),
+    state('open', style({
+      transform: 'rotateX(180deg)',
+      transitionTimingFunction: 'linear',
+      transformStyle: 'flat',
+    })),
+    transition('closed => open', [
+      animate('1s')
+    ])
+  ]),
+  trigger('card', [
+    state('closed', style({
+    })),
+    state('open', style({
+      scale: '160%',
+      transform: 'translateY(-50px)'
+    })),
+    transition('closed => open', [
+      animate('1s')
+    ])
+  ]),
+  trigger('survey', [
+    state('closed', style({
+      opacity: 0,
+    })),
+    state('open', style({
+      opacity: 1,
+    })),
+    transition('closed => open', [
+      animate('1s')
+    ])
+  ]),
+];
+
+
 @Component({
   selector: 'app-message',
   templateUrl: './message.component.html',
   styleUrls: ['./message.component.scss'],
-  animations: [
-    trigger('envelope', [
-      state('closed', style({
-        opacity: 1,
-        visibility: 'visible',
-      })),
-      state('open', style({
-        opacity: 0,
-        transform: 'translateY(500px)'
-      })),
-      transition('closed => open', [
-        animate('3s')
-      ])
-    ]),
-    trigger('envelopeTop', [
-      state('closed', style({
-      })),
-      state('open', style({
-        transform: 'rotateX(180deg)',
-        transitionTimingFunction: 'linear',
-        transformStyle: 'flat',
-      })),
-      transition('closed => open', [
-        animate('1s')
-      ])
-    ]),
-    trigger('card', [
-      state('closed', style({
-      })),
-      state('open', style({
-        scale: '175%',
-        transform: 'translateY(-50px)'
-      })),
-      transition('closed => open', [
-        animate('1s')
-      ])
-    ]),
-    trigger('survey', [
-      state('closed', style({
-        opacity: 0,
-      })),
-      state('open', style({
-        opacity: 1,
-      })),
-      transition('closed => open', [
-        animate('1s')
-      ])
-    ]),
-  ]
+  animations: getAnimations()
 })
 export class MessageComponent {
 
@@ -124,4 +179,14 @@ export class MessageComponent {
   public hotelBlock(): void{
     this.showSurvey = true;
   }
+
+  public back(): void {
+    this.showSurvey = false;
+  }
+}
+
+export function getAnimations() {
+  const isMobile = matchMedia("(max-width: 600px)").matches;
+
+  return isMobile ? mobileAnimations : desktopAnimations;
 }

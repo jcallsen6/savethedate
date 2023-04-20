@@ -23,9 +23,9 @@ html{
 }
 
 .image{
-  height:400px;
+  height:50%;
   position: absolute;
-  top: 300px;
+  top: 30%;
 }
 
 .survey{
@@ -37,9 +37,10 @@ html{
   margin-top: 80vh;
 }
 
-.calendarlink{
+.website{
   margin-top: 2vh;
 }
+
 
 .mat-mdc-raised-button:not(:disabled){
   color: #fff;
@@ -66,7 +67,7 @@ html{
 }
 
 .card{
-  scale:95%;
+  scale:65%;
   z-index:3;
 }
 
@@ -76,14 +77,14 @@ html{
 
 @media only screen and (min-width: 360px) and (max-width: 768px) {
 	.image{
-  height:250px;
+  height: 30%;
   position: absolute;
-  top: 120px;
+  top: 15%;
   margin-top: 10vh;
   }
 
   .nextbutton{
-    margin-top: 70vh;
+    margin-top: 65vh;
   }
 
   .card{
