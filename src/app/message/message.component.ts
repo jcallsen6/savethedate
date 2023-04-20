@@ -86,7 +86,7 @@ const mobileAnimations = [
     state('closed', style({
     })),
     state('open', style({
-      scale: '160%',
+      scale: '175%',
       transform: 'translateY(-50px)'
     })),
     transition('closed => open', [
